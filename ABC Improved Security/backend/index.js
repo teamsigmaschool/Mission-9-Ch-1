@@ -35,7 +35,6 @@ app.post('/auth/login', async (req, res) => {
   res.json({ session: data.session });
 });
 
-// This is just the JWT token logic but using Supabase service, ik, it wasnt discussed in the slides
 async function verifySupabaseSession(req, res, next) {
   const auth = req.headers.authorization;
   if (!auth) return res.status(401).end();
